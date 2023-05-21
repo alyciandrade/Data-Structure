@@ -92,7 +92,7 @@ bool isEmpty(Fila* fi)
 
 bool isFull(Fila* fi)
 {
-    if(size >= fi->limite)
+    if(size == fi->limite)
     {
         return true;
     }else
