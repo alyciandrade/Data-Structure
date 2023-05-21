@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "fila.h"
 
@@ -35,17 +35,17 @@ int main()
     printf("\nFUNCAO FIRST:\n");
     printf("Primeiro numero da fila: %d\n", first(&fi));
 
-    //Mostra se a fila est· vazia.
+    //Mostra se a fila est√° vazia.
     isEmpty(&fi);
 
     printf("\nA fila esta VAZIA? \n- %s\n", isEmpty(&fi) ? "verdadeiro" : "falso");
 
-    //Mostra se a fila est· cheia.
+    //Mostra se a fila est√° cheia.
     isFull(&fi);
 
     printf("\nA fila esta CHEIA? \n- %s\n", isFull(&fi) ? "verdadeiro" : "falso");
 
-    //Mostra todos os n˙meros que est„o na fila.
+    //Mostra todos os n√∫meros que est√£o na fila.
     printf("\nNUMEROS:\n");
     printAll(&fi);
 
@@ -54,4 +54,4 @@ int main()
     clear(&fi);
     printf("\nA fila esta VAZIA? \n- %s\n", isEmpty(&fi) ? "verdadeiro" : "falso");
 
-}*/
+}
