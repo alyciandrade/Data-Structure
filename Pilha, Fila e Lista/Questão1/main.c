@@ -6,49 +6,56 @@ int main()
 {
     Pilha* pi = create(8);
 
-    //Adiciona 4 elementos
-    add(&pi, 5);
-    add(&pi, 10);
-    add(&pi, 15);
-    add(&pi, 20);
-    add(&pi, 25);
-    add(&pi, 30);
-    add(&pi, 35);
+    // Adiciona 4 elementos
+    add(pi, 5);  // Primeiro número adicionado (BASE)
+    add(pi, 10);
+    add(pi, 15);
+    add(pi, 20);
+    add(pi, 25);
+    add(pi, 30);
+    add(pi, 35);
+    add(pi, 40); // Último número adicionado (TOPO)
 
     printf("FUNCAO ADD:\n");
-    printf("Numeros de elementos na fila: %d\n", size(&pi));
+    printf("Numeros de elementos na pilha: %i\n", size(pi));
 
-    //Remove primeiro elemento da fila.
-    pop(&pi);
+    // Remove o último elemento da pilha.
+    pop(pi);
 
     printf("\nFUNCAO POP:\n");
-    printf("Numeros de elementos na fila: %d\n", size(&pi));
+    printf("Numeros de elementos na pilha depois da remocao do numero do topo: %i\n", size(pi));
 
-    //Mostra o ultimo elemento da fila.
-    top(&pi);
-
+    // Mostra o elemento do topo da pilha.
     printf("\nFUNCAO TOP:\n");
-    printf("Ultimo numero da fila: %d\n", top(&pi));
+    if (!isEmpty(pi)) {
+        printf("Elemento do topo da pilha: %i\n", top(pi));
+    }
 
-    //Mostra o primeiro elemento da fila.
-    bottom(&pi);
-
+    // Mostra o elemento da base da pilha.
     printf("\nFUNCAO BOTTOM:\n");
-    printf("Primeiro numero da fila: %d\n", bottom(&pi));
+    if (!isEmpty(pi)) {
+        printf("Elemento da base da pilha: %i\n", bottom(pi));
+    }
 
-    //Mostra se a fila est� vazia.
-    isEmpty(&pi);
+    // Encontra a posição de um elemento na pilha.
+    printf("\nFUNCAO FIND:\n");
+    int posicao = find(pi, 20);
+    if (posicao != -1) {
+        printf("O numero %i foi encontrado na posicao: [%i]\n", 20, posicao);
+    } else {
+        printf("Elemento nao encontrado\n");
+    }
 
-    printf("\nA fila esta VAZIA? \n- %s\n", isEmpty(&pi) ? "verdadeiro" : "falso");
+    // Verifica se a pilha está vazia.
+    printf("\nA pilha esta VAZIA? %s\n", isEmpty(pi) ? "Sim" : "Nao");
 
-    //Mostra se a fila est� cheia.
-    isFull(&pi);
+    // Verifica se a pilha está cheia.
+    printf("A pilha esta CHEIA? %s\n", isFull(pi) ? "Sim" : "Nao");
 
-    printf("\nA fila esta CHEIA? \n- %s\n", isFull(&pi) ? "verdadeiro" : "falso");
+    // Remove todos os elementos da pilha.
+    clear(pi);
+    printf("\nFUNCAO CLEAR\n");
+    printf("A pilha esta VAZIA? %s\n", isEmpty(pi) ? "Sim" : "Nao");
 
-    //Remove todos os elementos da fila.
-    printf("\nFUNCAO CLEAR");
-    clear(&pi);
-    printf("\nA fila esta VAZIA? \n- %s\n", isEmpty(&pi) ? "verdadeiro" : "falso");
-
+    return 0;
 }
